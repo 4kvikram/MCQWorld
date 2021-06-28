@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MCQWorld.DAL.Migrations
 {
     [DbContext(typeof(MCQWorldDbContext))]
-    [Migration("20210628022740_initialMigration")]
-    partial class initialMigration
+    [Migration("20210628113547_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -133,6 +133,26 @@ namespace MCQWorld.DAL.Migrations
                     b.HasKey("QuestionId");
 
                     b.ToTable("Questions");
+
+                    b.HasData(
+                        new
+                        {
+                            QuestionId = 1L,
+                            CreatedOn = new DateTime(2021, 6, 28, 17, 5, 46, 416, DateTimeKind.Local).AddTicks(4761),
+                            Description = "test",
+                            ModifyedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionType = 0L,
+                            Status = 1
+                        },
+                        new
+                        {
+                            QuestionId = 2L,
+                            CreatedOn = new DateTime(2021, 6, 28, 17, 5, 46, 417, DateTimeKind.Local).AddTicks(6245),
+                            Description = "test one",
+                            ModifyedOn = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            QuestionType = 0L,
+                            Status = 1
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

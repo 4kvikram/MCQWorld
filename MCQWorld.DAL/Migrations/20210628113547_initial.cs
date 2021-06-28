@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MCQWorld.DAL.Migrations
 {
-    public partial class initialMigration : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -175,6 +175,16 @@ namespace MCQWorld.DAL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Questions",
+                columns: new[] { "QuestionId", "CreatedBy", "CreatedOn", "Description", "ModifyedBy", "ModifyedOn", "Question", "QuestionType", "Status" },
+                values: new object[] { 1L, null, new DateTime(2021, 6, 28, 17, 5, 46, 416, DateTimeKind.Local).AddTicks(4761), "test", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 0L, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Questions",
+                columns: new[] { "QuestionId", "CreatedBy", "CreatedOn", "Description", "ModifyedBy", "ModifyedOn", "Question", "QuestionType", "Status" },
+                values: new object[] { 2L, null, new DateTime(2021, 6, 28, 17, 5, 46, 417, DateTimeKind.Local).AddTicks(6245), "test one", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, 0L, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

@@ -8,6 +8,9 @@ using System.Text;
 
 namespace MCQWorld.DAL.Context
 {
+    /// <summary>
+    ///  see :  https://www.c-sharpcorner.com/article/seed-data-in-net-core-identity/
+    /// </summary>
     public class MCQWorldDbContext : IdentityDbContext<ApplicationUser>
     {
         public MCQWorldDbContext(
@@ -15,14 +18,16 @@ namespace MCQWorld.DAL.Context
         {
             Database.EnsureCreated();
         }
-        public DbSet<Questions> Questions{get; set;}
+        public DbSet<Questions> Questions { get; set; }
 
 
-      
-        protected override void OnModelCreating(ModelBuilder builder)
+
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-           // builder.Seed();
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Seed();
         }
     }
 }
