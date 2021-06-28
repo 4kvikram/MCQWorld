@@ -9,6 +9,7 @@ namespace MCQWorld.Models.ViewModels
     {
         [Required]
         [EmailAddress]
+      //  [System.Web.Mvc.Remote(action: "IsEmailInUse", controller: "Account")]
         public string Email { get; set; }
 
         [Required]
