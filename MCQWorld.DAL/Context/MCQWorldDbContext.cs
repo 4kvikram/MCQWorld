@@ -19,11 +19,7 @@ namespace MCQWorld.DAL.Context
             Database.EnsureCreated();
         }
         public DbSet<Questions> Questions { get; set; }
-
-
-
-
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
